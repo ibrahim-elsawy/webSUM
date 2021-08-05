@@ -11,4 +11,5 @@ export default createGlobalStyle`
 }
 #root{
         margin:0 auto;
-}`
+}
+`

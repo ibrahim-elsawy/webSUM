@@ -1,10 +1,18 @@
 import React from 'react'
-import { Container, Logo } from './stylesNav';
+import { Button, Container, Logo, Text, Wrapper } from './stylesNav';
+import logo from "../../assets/p.svg";
 
 export const NavBar: React.FC = () => {
     return (
         <Container>
-            <Logo src="../../assets/p.svg"></Logo>
+            <Wrapper flexDirection="row" alignItems="center">
+                <Logo src={logo}></Logo>
+                <Text color="#ffffff" >Pegasus Summary</Text>
+            </Wrapper>
+            <div>
+                <Button>Login</Button>
+                <Button>Sign Up</Button>
+            </div>
         </Container>
     )
 }
