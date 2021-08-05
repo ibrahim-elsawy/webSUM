@@ -1,13 +1,10 @@
 import React from 'react';
+import { NavBar } from './componets/navBar/indexNav';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p> Ibrahim el sawy is loser</p>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => (
+  <>
+    <NavBar></NavBar>
+  </>
+)
 
 export default App;
