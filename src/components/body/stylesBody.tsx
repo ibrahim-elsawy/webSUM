@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import { PageText as BodyText} from "../../styles/pageText";
 import { PageItemWrapper as BodyWrapper} from "../../styles/itemWrapper";
-
-
+//props for textarea 
+interface Props {
+	placeholder: string;
+	border: string;
+	resize: string;
+}
 export const Background = styled.div`
 	height: 100vh;
 	padding: .3em;
@@ -21,13 +25,16 @@ export const Input = styled.input.attrs({
 	background-color: transparent;
 	color:white;
 	`
-export const TextInput = styled.textarea.attrs({
+export const TextInput = styled.textarea.attrs(props => ({
 	type: 'input',
-	placeholder: 'Please enter the text',
+	placeholder: props.placeholder ? props.placeholder : '',
+	readOnly: props.readOnly ? props.readOnly : '',
 	rows:10
-})`
+}))`
 	background-color: black;
 	color: #d3c7c7;
+	border: ${(props:Props) => props.border ? props.border : ''};
+	resize: ${(props:Props) => props.resize ? props.resize : 'none'};
 `
 export const Wrapper = styled(BodyWrapper)`
 	display:flex;
@@ -47,12 +54,12 @@ export const Button = styled.button`
 	margin: 1rem;
 	width: 10em;
 	padding: .3rem;
-	background-color: #1271b5;
+	background-color: #e2a779;
 	border:0;
 	border-radius: .3em;
-	color: #f7e1e1;
+	color: #0a0a0a;
 	cursor:pointer;
-	border: 1px solid #66a1e4;
+	border: 1px solid #000000;
 	&:hover{
 		border:1px solid #ffffff;
 		border-radius: .4em;

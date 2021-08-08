@@ -12,11 +12,14 @@ export const Container = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	color: white;
-	background-color: #799abf;
+	/* background-color: #799abf; */
+	background-color: #ac86d0;
 	`
 
 export const Text = styled(NavText)`
 	color: ${(props) => props.color ? props.color : "#000000f"};
+	font-weight: ${(props) => props.weight ? props.weight : "none"};
+	font-style: ${(props) => props.style ? props.style : "normal"};
 	font-size: ${(props)=>props.fontSize ? props.fontSize : ".9em"};
 `
 
@@ -39,7 +42,7 @@ export const Wrapper = styled(NavItemWrapper)`
 export const Logo = styled.img`
     width: 3em;
     height: 3em;
-    border:1px solid #799abf;
+    border:1px solid transparent;
     padding: .2em .1em;
     margin-right: 1rem;
     /* cursor:pointer; */
@@ -52,12 +55,15 @@ export const Logo = styled.img`
 export const Button = styled.button`
 	margin: 1rem;
 	padding: .2rem;
-	background-color: #1271b5;
-	color: #f7e1e1;
+	/* background-color: #1271b5; */
+	background-color: #e2a779;
+	/* color: #f7e1e1; */
+	color: #0a0a0a;
 	border:0;
 	border-radius: .3em;
 	cursor:pointer;
-	border: 1px solid #66a1e4;
+	/* border: 1px solid #66a1e4; */
+	border: 1px solid #000000;
 	&:hover{
 		border:1px solid #ffffff;
 		border-radius: .4em;

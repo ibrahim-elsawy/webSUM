@@ -18,6 +18,9 @@ function setJwt(jwt:string|null, refreshToken: string|null) {
   axios.defaults.headers.common["token"] = jwt;
   axios.defaults.headers.common["refreshToken"] = refreshToken;
 }
+export interface Result{
+  sum: string;
+}
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {

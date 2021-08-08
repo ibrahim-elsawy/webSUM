@@ -9,14 +9,14 @@ interface Props {
 export const NavBar: React.FC<Props> = ({History}) => {
     const onLogin = () => History.push("/login");
     const onSignup = () => History.push("/register");
-    const onMain = () => History.push("/main");
+    // const onMain = () => History.push("/main");
 
     return (
         <Container>
             <Link to="/main" style={{ textDecoration:"none" }}>
                 <Wrapper flexDirection="row" alignItems="center">
                     <Logo src={logo}></Logo>
-                    <Text color="#ffffff" >Pegasus Summary</Text>
+                    <Text color="#000000" weight={900} style="italic" fontSize="1.1em">Pegasus Summary</Text>
                 </Wrapper>
             </Link>
             <div>

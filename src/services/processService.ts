@@ -1,4 +1,4 @@
-import http from "./httpService";
+import http, { Result } from "./httpService";
 import { apiUrl } from "../config.json";
 
 
@@ -7,15 +7,21 @@ import { apiUrl } from "../config.json";
 
 
 export function fileProcess(formData:FormData) {
-  return http.post(apiUrl + '/file', formData, {
+  return http.post<Result>(apiUrl + '/sum/file', formData, {
     headers: {
-        'content-type': 'multipart/form-data'
+      'content-type': /*'multipart/form-data'*/'application/x-www-form-urlencoded',
+      'Access-Control-Allow-Origin': true,
       }
     });
   }
 
-export function stringProcess(text:string) {
-  return http.post(apiUrl + '/text', text);
+export function stringProcess(textForm?: FormData) {
+  return http.post<Result>(apiUrl + '/sum/text', textForm, {
+    headers: {
+      
+      'Acces-Control-Allow-Origin':true,
+    }
+  });
   }
 
 

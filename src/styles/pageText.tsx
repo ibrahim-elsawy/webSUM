@@ -5,6 +5,8 @@ interface Props {
 	className?: string;
 	fontSize?: any;
 	color?: string;
+	style?: string;
+	weight?: number;
 }
 
 
