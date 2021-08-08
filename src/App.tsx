@@ -1,10 +1,10 @@
 import React from 'react';
-import { Main } from './componets/body/indexBody';
-import { NavBar } from './componets/navBar/indexNav';
+import { Main } from './components/body/indexBody';
+import { NavBar } from './components/navBar/indexNav';
 import Global from "./styles/global";
 import { Route, Redirect, Switch, BrowserRouter, useHistory } from "react-router-dom";
-import { Signup } from './componets/navBar/signup';
-import { Login } from './componets/navBar/login';
+import { Signup } from './components/navBar/signup';
+import { Login } from './components/navBar/login';
 
 const App: React.FC = () => {
   return (
