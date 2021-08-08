@@ -1,8 +1,7 @@
 import axios from "axios";
-import logger from "./logService";
-import { toast } from "react-toastify";
+import { logger } from "./logService";
 
-axios.interceptors.response.use(null, error => {
+axios.interceptors.response.use(undefined, error => {
   const expectedError =
     error.response &&
     error.response.status >= 400 &&
@@ -10,16 +9,17 @@ axios.interceptors.response.use(null, error => {
 
   if (!expectedError) {
     logger.log(error);
-    toast.error("An unexpected error occurrred.");
   }
 
   return Promise.reject(error);
 });
 
-function setJwt(jwt) {
-  axios.defaults.headers.common["x-auth-token"] = jwt;
+function setJwt(jwt:string|null, refreshToken: string|null) {
+  axios.defaults.headers.common["token"] = jwt;
+  axios.defaults.headers.common["refreshToken"] = refreshToken;
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   get: axios.get,
   post: axios.post,

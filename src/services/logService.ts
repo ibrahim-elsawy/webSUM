@@ -4,11 +4,11 @@
 
 function init() {}
 
-function log(error) {
+function log(error:string) {
   console.error(error);
 }
 
-export default {
+export const logger={
   init,
   log
 };

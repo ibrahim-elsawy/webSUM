@@ -27,6 +27,7 @@ export const TextInput = styled.textarea.attrs({
 	rows:10
 })`
 	background-color: black;
+	color: #d3c7c7;
 `
 export const Wrapper = styled(BodyWrapper)`
 	display:flex;

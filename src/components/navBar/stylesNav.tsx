@@ -52,11 +52,12 @@ export const Logo = styled.img`
 export const Button = styled.button`
 	margin: 1rem;
 	padding: .2rem;
-	background-color: #1271b5; 
+	background-color: #1271b5;
+	color: #f7e1e1;
 	border:0;
 	border-radius: .3em;
 	cursor:pointer;
-	border: 1px solid #131A22;
+	border: 1px solid #66a1e4;
 	&:hover{
 		border:1px solid #ffffff;
 		border-radius: .4em;
@@ -74,11 +75,13 @@ export const SignWrapper = styled.div`
 	display: flex;
 	flex-direction: "column";
         align-items: "flex-start";
+	justify-content: center;
         padding: .1em;
 	height: 100vh;
 	`
 export const SignForm = styled.form`
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
 	background-color:transparent;
 	margin: .5em;
@@ -91,5 +94,8 @@ export const InputSign = styled.input.attrs<Props>(props=>({
 }))`
 	padding: .5em; 
 	margin: .2em;
+	border-radius: .3em;
+	background-color: #d3eef1;
+	border-color: grey;
 `
 

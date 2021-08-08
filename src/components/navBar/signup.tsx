@@ -8,6 +8,8 @@ export const Signup: React.FC = () => {
 	return (
 		<SignWrapper>
 			<SignForm>
+				<label color="#fffff" >Username</label>
+				<InputSign type="text" ></InputSign>
 				<label color="#fffff" >Email</label>
 				<InputSign type="email" ></InputSign>
 				<label color="#fffff" >Password</label>
