@@ -50,8 +50,9 @@ export const Button = styled.button`
 	background-color: #1271b5;
 	border:0;
 	border-radius: .3em;
+	color: #f7e1e1;
 	cursor:pointer;
-	border: 1px solid #131A22;
+	border: 1px solid #66a1e4;
 	&:hover{
 		border:1px solid #ffffff;
 		border-radius: .4em;

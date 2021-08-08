@@ -26,10 +26,10 @@ export const Wrapper = styled(NavItemWrapper)`
         align-items:  ${(props)=>props.alignItems ? props.alignItems  : "flex-start"};
         padding: .1em;
         cursor:pointer;
-        border:1px solid #131A22;
+        border:1px solid transparent;
 
         &:hover{
-		border:1px solid #ffffff;
+		border:1px solid #cec3e1;
 		border-radius: .2em;
         }
 	@media(max-width:850px){
