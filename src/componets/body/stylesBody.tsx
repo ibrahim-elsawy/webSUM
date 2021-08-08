@@ -26,6 +26,7 @@ export const TextInput = styled.textarea.attrs({
 	placeholder: 'Please enter the text',
 	rows:10
 })`
+	background-color: black;
 `
 export const Wrapper = styled(BodyWrapper)`
 	display:flex;

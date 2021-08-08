@@ -1,23 +1,27 @@
 import React from 'react'
 import { Button, Container, Logo, Text, Wrapper } from './stylesNav';
 import logo from "../../assets/p.svg";
-import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
-
-export const NavBar: React.FC = () => {
-    let history = useHistory();
-    const onLogin = () => history.push("/login");
-    const onSignup = () => history.push("/register");
+interface Props {
+    History: any
+}
+export const NavBar: React.FC<Props> = ({History}) => {
+    const onLogin = () => History.push("/login");
+    const onSignup = () => History.push("/register");
+    const onMain = () => History.push("/main");
 
     return (
         <Container>
-            <Wrapper flexDirection="row" alignItems="center">
-                <Logo src={logo}></Logo>
-                <Text color="#ffffff" >Pegasus Summary</Text>
-            </Wrapper>
+            <Link to="/main" style={{ textDecoration:"none" }}>
+                <Wrapper flexDirection="row" alignItems="center">
+                    <Logo src={logo}></Logo>
+                    <Text color="#ffffff" >Pegasus Summary</Text>
+                </Wrapper>
+            </Link>
             <div>
-                <Button onClick={}>Login</Button>
-                <Button>Sign Up</Button>
+                <Button onClick={onLogin}>Login</Button>
+                <Button onClick={onSignup}>Sign Up</Button>
             </div>
         </Container>
     )

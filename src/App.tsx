@@ -2,15 +2,15 @@ import React from 'react';
 import { Main } from './componets/body/indexBody';
 import { NavBar } from './componets/navBar/indexNav';
 import Global from "./styles/global";
-import { Route, Redirect, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Redirect, Switch, BrowserRouter, useHistory } from "react-router-dom";
 import { Signup } from './componets/navBar/signup';
 import { Login } from './componets/navBar/login';
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+  return (
   <>
-    <Global/>
-    <NavBar></NavBar>
-    <BrowserRouter>
+    <Global />
+    <NavBar History={useHistory()}></NavBar>
       <Switch>
         <Route path="/register">
           <Signup></Signup>
@@ -21,10 +21,10 @@ const App: React.FC = () => (
         <Route path="/main">
           <Main></Main>
         </Route>
-        <Redirect to="/main"/>
+        <Redirect to="/main" />
       </Switch>
-    </BrowserRouter>
   </>
-)
+  )
+}
 
 export default App;
