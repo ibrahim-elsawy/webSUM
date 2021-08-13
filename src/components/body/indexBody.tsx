@@ -2,12 +2,15 @@ import React, {useState} from "react";
 import { toast } from "react-toastify";
 import { fileProcess, stringProcess } from "../../services/processService";
 import { Background, Button, Input, Text, TextInput, Upload, Wrapper } from "./stylesBody";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 
 export const Main: React.FC = () => {
 	const [textString, updateText] = useState();
 	const [textFile, updateFile] = useState<any>();
 	const [result, updateResult] = useState<any>();
+	const [send, updateSend] = useState<Boolean>(false);
 
 	const textChange = (c: any) => {
 		updateText(c.target.value);
@@ -19,11 +22,12 @@ export const Main: React.FC = () => {
 		if (textFile != null)
 		{
 			//call server
+			updateSend(true);
 			const formData = new FormData();
 			formData.append("file", textFile);
 			const res = await fileProcess(formData);
-			updateFile(res);
-			console.log(res);
+			updateResult(res);
+			updateSend(false);
 		}
 		else if (textString != null)
 		{
@@ -32,6 +36,7 @@ export const Main: React.FC = () => {
 			textData.append("text", textString?textString:textFile);
 			const res = await stringProcess(textData);
 			updateResult(res);
+			updateSend(false);
 			console.log(res);
 		}
 		else
@@ -56,7 +61,8 @@ export const Main: React.FC = () => {
 			</Upload>
 			<Wrapper>
 				<Button onClick={onSumbit}>Summarize </Button>
-				{result && (<TextInput border="none" readOnly="none"></TextInput>)}
+				{result && (<TextInput border="none" readOnly="none">{ result.data["data"]}</TextInput>)}
+				{send && (<Loader type="TailSpin" color="#9b9b9b" height={50} width={80}/>)}
 			</Wrapper>
 		</Background>
 	)

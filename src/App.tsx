@@ -16,10 +16,10 @@ const App: React.FC = () => {
     <NavBar History={useHistory()}></NavBar>
       <Switch>
         <Route path="/register">
-          <Signup></Signup>
+          <Signup History={useHistory()}></Signup>
         </Route>
         <Route path="/login">
-          <Login></Login>
+          <Login History={useHistory()}></Login>
         </Route>
         <Route path="/main">
           <Main></Main>

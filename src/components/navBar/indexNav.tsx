@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Container, Logo, Text, Wrapper } from './stylesNav';
 import logo from "../../assets/p.svg";
 import { Link } from 'react-router-dom';
+import { getJwt, logout } from '../../services/authService';
 
 interface Props {
     History: any
@@ -19,10 +20,15 @@ export const NavBar: React.FC<Props> = ({History}) => {
                     <Text color="#000000" weight={900} style="italic" fontSize="1.1em">Pegasus Summary</Text>
                 </Wrapper>
             </Link>
-            <div>
+            {getJwt().jwt == null &&(<div>
                 <Button onClick={onLogin}>Login</Button>
                 <Button onClick={onSignup}>Sign Up</Button>
-            </div>
+            </div>)}
+            {getJwt().jwt != null && (
+                <div>
+                    <Button onClick={logout}>Logout</Button>
+                </div>
+            )}
         </Container>
     )
 }

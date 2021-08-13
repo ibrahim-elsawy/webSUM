@@ -65,7 +65,7 @@ export const Button = styled.button`
 		border-radius: .4em;
         }
 	@media(max-width:850px){
-		display: none;
+		width:7em;
         }
 `
 
