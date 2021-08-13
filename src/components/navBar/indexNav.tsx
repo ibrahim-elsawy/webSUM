@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React from 'react'
 import { Button, Container, Logo, Text, Wrapper } from './stylesNav';
 import logo from "../../assets/p.svg";

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Register} from '../../services/authService';
-import { alertToast, submitCheck } from '../../services/Validation/sumbitCheck';
+import { alertToast } from '../../services/Validation/sumbitCheck';
 import { Button, InputSign, SignForm, SignWrapper, BackWrapper } from "./stylesNav";
 
 
